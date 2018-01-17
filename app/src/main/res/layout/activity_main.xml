@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.wangshijia.www.multiscrollview.MainActivity">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<com.wangshijia.www.multiscrollview.refresh.RefreshLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:id="@+id/refreshLayout"-->
+        <!--android:layout_height="match_parent">-->
+
+        <com.wangshijia.www.multiscrollview.AdjustScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/bannerPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"/>
+
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_vp_rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="#FFF"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="@color/colorAccent"
+                    app:tabTextColor="@color/colorPrimary"/>
+
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/bottomPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </com.wangshijia.www.multiscrollview.AdjustScrollView>
+
+        <!--</com.wangshijia.www.multiscrollview.refresh.RefreshLayout>-->
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include layout="@layout/toorbar_layout"/>
+
+
+</android.support.constraint.ConstraintLayout>
